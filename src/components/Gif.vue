@@ -71,7 +71,11 @@ async function initData() {
   }
 }
 
-watch(() => gifID.value, () => initData())
+watch(() => gifID.value, (newVal) => {
+  if (newVal) {
+    initData()
+  }
+})
 
 onMounted(() => {
   if (gifID.value) {

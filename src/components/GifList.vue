@@ -1,13 +1,13 @@
 <template>
   <div>
-    <header class="d-flex align-center">
+    <header class="d-flex align-center flex-wrap">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Giphy-logo.svg/1280px-Giphy-logo.svg.png"
         alt="logo"
         width="200"
-        class="mr-2"
+        class="mr-2 mb-1"
       >
-      <v-text-field v-model="query" label="Search" @input="searchChange" />
+      <v-text-field v-model="query" label="Search" class="search" @input="searchChange" />
     </header>
 
     <p v-if="isLoading">Loading...</p>
@@ -80,5 +80,9 @@ onMounted(() => initData())
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.search {
+  min-width: 200px;
 }
 </style>

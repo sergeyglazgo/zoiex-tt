@@ -45,7 +45,10 @@ function debounce () {
   let timer: ReturnType<typeof setTimeout>
   return () => {
     clearTimeout(timer)
-    timer = setTimeout(() => initData(), 500)
+    timer = setTimeout(() => {
+      initData()
+      currentPage.value = 0
+    }, 500)
   }
 }
 const searchChange = debounce()

@@ -37,10 +37,11 @@ const props = defineProps<{
 
 const store = useStore()
 const route = useRoute()
+
 const isLoading = ref(false)
 const isError = ref(false)
-const gifID = computed(() => route.params.id)
 
+const gifID = computed(() => route.params.id)
 const gif = computed(() => props.gif || store.getters.getGif)
 
 async function share() {

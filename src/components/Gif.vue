@@ -50,11 +50,7 @@ async function share() {
     text: 'Check this Gif'
   }
   if(navigator.canShare(shareData)) {
-    try {
-      await navigator.share(shareData)
-    } catch (e) {
-      console.error(e)
-    }
+    await navigator.share(shareData)
   } else {
     alert('Sorry! Your browser does not support Web Share API')
   }

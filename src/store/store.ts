@@ -26,7 +26,8 @@ export const store = createStore<State>({
 
       if (!data.length) {
         url = baseURL + 'search' + apiKey + '&q=no&limit=11'
-        data = [(await fetchData(url)).data[Math.floor(Math.random() * 11)]]
+        const randomIndex = Math.floor(Math.random() * 11)
+        data = [(await fetchData(url)).data[randomIndex]]
       }
 
       const gifs = data.map(mapGifData)
